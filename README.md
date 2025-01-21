@@ -21,18 +21,7 @@ streamlit run app.py
 ```
 
 ## Preview
-<style>
-    .image-container {
-        display: flex;
-        align-items: flex-start;
-        gap: 20px;
-    }
-    .image-container img {
-        max-width: 300px;
-        height: auto;
-    }
-</style>
-<div class="image-container">
-    <img src="iOS.PNG" alt="iOS App Preview">
-    <img src="streamlit.png" alt="Streamlit Preview">
+<div class="image-container" style="display: flex; align-items: flex-start; gap: 20px;">
+    <img src="iOS.PNG" alt="iOS App Preview" width="300">
+    <img src="streamlit.png" alt="Streamlit Preview" width="300">
 </div>
