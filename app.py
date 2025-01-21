@@ -5,7 +5,7 @@ from torchvision import transforms
 from PIL import Image
 import os
 from train import SimpleCNN, get_class_names
-from constants import LIST_FILE
+from constants import LIST_FILE, MODEL_PATH
 
 class SimpleCNNWithSoftmax(SimpleCNN):
     def __init__(self, num_classes=37):
@@ -38,8 +38,7 @@ def main():
     st.title("Pet Classification Demo")
     st.write("Upload an image to predict the pet.")
 
-    # Path to the model file
-    model_path = "best_pet_classifier.pth"  # Fixed path
+    model_path = MODEL_PATH
 
     if not os.path.exists(model_path):
         st.error(f"Model file '{model_path}' not found. Please provide the correct path.")

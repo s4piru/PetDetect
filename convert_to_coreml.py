@@ -8,7 +8,7 @@ from PIL import Image
 import coremltools as ct
 
 from train import SimpleCNN, get_class_names
-from constants import LIST_FILE
+from constants import LIST_FILE, MODEL_PATH
 
 # Extend SimpleCNN to include softmax output
 class SimpleCNNWithSoftmax(SimpleCNN):
@@ -85,7 +85,7 @@ def main():
     
     # Load PyTorch model
     model_pt = SimpleCNNWithSoftmax(num_classes)
-    model_path = "best_pet_classifier.pth"
+    model_path = MODEL_PATH
     if not os.path.exists(model_path):
         raise FileNotFoundError(f"Model file '{model_path}' not found.")
     state_dict = torch.load(model_path, map_location='cpu')

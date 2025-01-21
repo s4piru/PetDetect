@@ -10,7 +10,7 @@ from tqdm import tqdm
 from sklearn.metrics import confusion_matrix, classification_report
 import matplotlib.pyplot as plt
 import seaborn as sns
-from constants import IMAGES_DIR, LIST_FILE, TEST_FILE
+from constants import IMAGES_DIR, LIST_FILE, TEST_FILE, MODEL_PATH
 
 class OxfordPetsDataset(Dataset):
     def __init__(self, list_file, images_dir, transform=None):
@@ -183,7 +183,7 @@ def train_and_evaluate(model, train_loader, val_loader, criterion, optimizer, de
         # Save best model
         if val_epoch_acc > best_val_acc:
             best_val_acc = val_epoch_acc
-            torch.save(model.state_dict(), 'best_pet_classifier.pth')
+            torch.save(model.state_dict(), MODEL_PATH)
             print('Best model saved')
 
     print(f'Best Validation Accuracy: {best_val_acc:.4f}')
