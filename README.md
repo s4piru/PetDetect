@@ -1,4 +1,4 @@
-# Safe Pet Detect
+# Pet Detect
 
 The project is designed to identify various pets using the Oxford-IIIT Pet Dataset. I trained a convolutional neural network (CNN) to recognize 37 different breeds of cats and dogs. Then, converted the trained PyTorch model to Apple's Core ML format to use the model in iOS app.
 
